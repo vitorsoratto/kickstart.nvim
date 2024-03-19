@@ -162,6 +162,15 @@ vim.opt.scrolloff = 10
 vim.keymap.set('n', '<C-q>', '<cmd>q<CR>', { desc = 'Quit' })
 -- Space + e to open file explorer
 vim.keymap.set('n', '<leader>f', '<cmd>Neotree<CR>', { desc = 'File [E]xplorer' })
+-- Toggleterm keys
+local opts = { buffer = 0 }
+vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
+vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
+vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
+vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
+vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], opts)
+vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]], opts)
+vim.keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]], opts)
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
