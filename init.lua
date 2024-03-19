@@ -157,6 +157,12 @@ vim.opt.scrolloff = 10
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
+-- [[ Custom keybindings ]]
+-- Ctrl + q to quit
+vim.keymap.set('n', '<C-q>', '<cmd>q<CR>', { desc = 'Quit' })
+-- Space + e to open file explorer
+vim.keymap.set('n', '<leader>f', '<cmd>Neotree<CR>', { desc = 'File [E]xplorer' })
+
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
