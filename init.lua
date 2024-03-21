@@ -84,6 +84,9 @@ I hope you enjoy your Neovim journey,
 P.S. You can delete this when you're done too. It's your config now! :)
 --]]
 
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
@@ -161,7 +164,8 @@ vim.opt.scrolloff = 10
 -- Ctrl + q to quit
 vim.keymap.set('n', '<C-q>', '<cmd>q<CR>', { desc = 'Quit' })
 -- Space + e to open file explorer
-vim.keymap.set('n', '<leader>f', '<cmd>Neotree<CR>', { desc = 'File [E]xplorer' })
+vim.keymap.set('n', '<leader>f', '<cmd>NvimTreeOpen<CR>', { desc = 'File [E]xplorer' })
+
 -- Toggleterm keys
 local opts = { buffer = 0 }
 vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
@@ -611,6 +615,8 @@ require('lazy').setup({
           end,
         },
       }
+
+      require('nvim-tree').setup()
     end,
   },
 
